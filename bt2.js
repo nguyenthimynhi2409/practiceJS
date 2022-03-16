@@ -9,12 +9,14 @@ function getPath(index, filename) {
 
 async function getAllFile() {
   let promises = [];
+  let sum=0;
   for (let i = 0; i < 10; i++) {
     const content1 = await new Promise((resolve) =>
       setTimeout(() => {
         fs.readFile(getPath(i + 1, "file1"), "utf-8", (err, data) => {
           if (err) reject(err);
-          resolve(data);
+          sum += parseInt(data);
+          resolve(sum);
           // console.log(data);
         });
       }, 500)
@@ -23,7 +25,8 @@ async function getAllFile() {
       setTimeout(() => {
         fs.readFile(getPath(i + 1, "file2"), "utf-8", (err, data) => {
           if (err) reject(err);
-          resolve(data);
+          sum += parseInt(data);
+          resolve(sum);
           // console.log(data);
         });
       }, 500)
@@ -31,17 +34,9 @@ async function getAllFile() {
     promises.push(content1);
     promises.push(content2);
   }
-  return Promise.all(promises);
-}
-
-function getResult() {
-  let sum = 0;
-  getAllFile().then((res) => {
-    res.forEach((result) => (sum += parseInt(result)));
-    const delay = Date.now() - timeoutScheduled;
-    console.log(delay);
-    console.log(sum);
+  return Promise.all(promises).then((res) => {
+    console.log(res[res.length-1]);
   });
 }
 
-getResult();
+getAllFile();
