@@ -9,29 +9,28 @@ async function getAllFile() {
   let promises = [];
   let sum = 0;
   for (let i = 0; i < 10; i++) {
-    const content1 = await new Promise((resolve) =>
+    await new Promise((resolve) =>
       setTimeout(() => {
-        fs.readFile(getPath(i + 1, "file1"), "utf-8", (err, data) => {
-          if (err) reject(err);
-          resolve(parseInt(data));
-        });
-      }, 500)
+        const content1 = fs.readFileSync(
+          getPath(i + 1, "file1"),
+          "utf-8",
+          (err, data) => {
+            if (err) throw err;
+          }
+        );
+        const content2 = fs.readFileSync(
+          getPath(i + 1, "file2"),
+          "utf-8",
+          (err, data) => {
+            if (err) throw err;
+          }
+        );
+        resolve(Number(content1) + Number(content2));
+        sum += Number(content1) + Number(content2);
+      }, 1000)
     );
-    const content2 = await new Promise((resolve) =>
-      setTimeout(() => {
-        fs.readFile(getPath(i + 1, "file2"), "utf-8", (err, data) => {
-          if (err) reject(err);
-          resolve(parseInt(data));
-        });
-      }, 500)
-    );
-    let content = content1 + content2;
-    promises.push(content);
-    Promise.all(promises).then((res) => {
-      sum += res.pop();
-    });
   }
-  setTimeout(()=>console.log(sum),0);
+  console.log(sum);
 }
 
 getAllFile();
