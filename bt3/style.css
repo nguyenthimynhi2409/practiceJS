@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  display: flex;
+  height: 100vh;
+}
+#left-side {
+  flex-grow: 1;
+  background-color: #fdfdfd;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  height: 72px;
+  background-color: #fefefe;
+}
+.logo {
+  margin-right: 8px;
+}
+.logo img {
+  height: 30px;
+  width: 36px;
+}
+#logo-content h1 {
+  color: #1890ff;
+  text-align: center;
+  font-size: 16px;
+}
+#sidebar {
+  display: block;
+  background-color: #ffffff;
+  border: 4px;
+  height: 100%;
+}
+.bar-item {
+  display: flex;
+  color: #000;
+  padding: 16px;
+  text-decoration: none;
+}
+.bar-item p {
+  font-size: 16px;
+}
+.bar-item i {
+  color: gray;
+}
+.bar-item i:hover {
+  color: #1890ff;
+}
+.bar-item a {
+  padding-left: 15px;
+}
+.bar-item span {
+  padding-left: 10px;
+}
+.right-side {
+  flex-grow: 18;
+}
+.top-right {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.bar_icon {
+  display: flex;
+  height: 72px;
+  width: 72px;
+  align-items: center;
+  justify-content: center;
+}
+.bar_icon i {
+  color: gray;
+}
+.bar_icon:hover {
+  background-color: #fdfdfd;
+}
+.bar_icon:hover i {
+  color: #1890ff;
+}
+.account {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+.account h2 {
+  padding-right: 10px;
+  font-size: 13px;
+  color: #000;
+  font-weight: lighter;
+}
+.account .avatar img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+.main-content {
+  display: flex;
+  background-color: #f0f2f5;
+  height: 100%;
+}
+.content {
+  padding-left: 10px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: grey;
+  text-align: center;
+}
+.copyright.p {
+  font-size: 13px;
+}
+#menu {
+  visibility: hidden;
+  margin-left: 35px;
+}
+.chart {
+  padding: 10px;
+  list-style: none;
+}
+.chart a{
+  text-decoration: none;
+}
+.chart i {
+  color: gray;
+}
+.chart span{
+  padding-left: 10px;
+}
+#angle-up {
+  display: none;
+  padding-left: 10px;
+}
+#angle-down {
+  padding-left: 10px;
+}
