@@ -59,25 +59,12 @@ body {
 .bar-item:hover i{
   color: #1890ff;
 }
-.tooltip{
-  visibility: hidden;
-  width: 120px;
-  background-color: #19191bea;
-  color: #f0f2f5e3;
-  text-align: center;
-  border-radius: 6px;
-  padding: 16px;
-  position: absolute;
-  z-index: 1;
-  left: 11%;
-}
+
 .item-content{
   margin: 0;
   padding-left: 10px;
 }
-.bar-item:hover .tooltip{
-  visibility: visible;
-}
+
 .bar-item:hover .item-content{
   visibility: visible;
   color: #1890ff;
@@ -88,6 +75,9 @@ body {
 .bar-item span {
   padding-left: 10px;
 }
+.style-icon:hover{
+  color: #1890ff;
+}
 #menu {
   visibility: hidden;
   margin-left: 35px;
@@ -96,8 +86,14 @@ body {
   padding: 10px;
   list-style: none;
 }
+.chart:hover i{
+  color: #1890ff;
+}
 .chart a{
   text-decoration: none;
+}
+.chart:hover a{
+  color: #1890ff;
 }
 .chart i {
   color: gray;
@@ -105,12 +101,38 @@ body {
 .chart span{
   padding-left: 10px;
 }
+
+#subCharts {
+  visibility: hidden;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+}
+.subChart:hover i{
+  color: #1890ff;
+}
+.subChart a{
+  padding: 5px;
+  text-decoration: none;
+}
+.subChart:hover a{
+  color: #1890ff;
+}
+.subChart i {
+  color: gray;
+}
+.subChart span{
+  padding-left: 10px;
+}
+
 #angle-up {
   display: none;
   padding-left: 10px;
+  transform: translate(100px, 3px);
 }
 #angle-down {
   padding-left: 10px;
+  transform: translate(100px, 3px);
 }
 .right-side {
   flex-grow: 18;
@@ -175,3 +197,22 @@ body {
   font-size: 13px;
 }
 
+#hoverChart {
+  display: none;
+  position: relative;
+  left: 160px;
+  bottom: 570px;
+  background-color: #ffffff;
+  width: 125px;
+  padding: 10px;
+}
+.e-chart {
+  margin: 10px;
+}
+.e-chart:hover{
+  color: #1890ff;
+}
+.e-chart span {
+  margin-left: 5px;
+  
+}
