@@ -17,7 +17,7 @@
     <div class="main">
       <div id="left-side">
         <div class="top-left">
-          <div class="logo-container">
+          <div id="logo-container">
             <div class="logo">
               <img src="./img/logo.png" />
             </div>
@@ -56,38 +56,45 @@
             </div>
           </a>
           <div id="menu">
-            <li class="chart">
+            <li class="chart" onclick="select_chart(0)">
               <a href="#"
-                ><i class="fa-solid fa-chart-column"></i><span>EChart</span></a
+                ><i class="style-chart fa-solid fa-chart-column"></i
+                ><span class="chart-content">EChart</span></a
               >
             </li>
-            <li class="chart">
+            <li class="chart" onclick="select_chart(1)">
               <a href="#"
-                ><i class="fa-solid fa-chart-bar"></i><span>HighCharts</span></a
+                ><i class="style-chart fa-solid fa-chart-bar"></i
+                ><span class="chart-content">HighCharts</span></a
               >
             </li>
-            <li class="chart">
-              <a href="#" onclick="showHideSubChart()"
-                ><i class="fa-solid fa-chart-area"></i><span>ReChartst</span></a
-              >
+            <li class="chart" onclick="showHideSubChart()">
+              <a href="#"
+                ><i class="style-chart fa-solid fa-chart-area"></i
+                ><span class="chart-content">ReChartst</span>
+              </a>
+              <div>
+                <i id="angle-down-sub" class="fa-solid fa-angle-down"></i>
+                <i id="angle-up-sub" class="fa-solid fa-angle-up"></i>
+              </div>
             </li>
             <div id="subCharts">
-              <li class="subChart">
+              <li class="subChart" onclick="select_subChart(0)">
                 <a href="#"
-                  ><i class="fa-solid fa-chart-column"></i
-                  ><span>Chart1</span></a
+                  ><i class="subChart-style fa-solid fa-chart-column"></i
+                  ><span class="subChart-content">Chart1</span></a
                 >
               </li>
-              <li class="subChart">
+              <li class="subChart" onclick="select_subChart(1)">
                 <a href="#"
-                  ><i class="fa-solid fa-chart-column"></i
-                  ><span>Chart2</span></a
+                  ><i class="subChart-style fa-solid fa-chart-column"></i
+                  ><span class="subChart-content">Chart2</span></a
                 >
               </li>
-              <li class="subChart">
+              <li class="subChart" onclick="select_subChart(2)">
                 <a href="#"
-                  ><i class="fa-solid fa-chart-column"></i
-                  ><span>Chart3</span></a
+                  ><i class="subChart-style fa-solid fa-chart-column"></i
+                  ><span class="subChart-content">Chart3</span></a
                 >
               </li>
             </div>
@@ -98,20 +105,53 @@
           onmouseover="showChartHover()"
           onmouseout="hideChartHover()"
         >
-          <div class="e-chart">
+          <li class="e-chart">
             <i class="fa-solid fa-chart-column"></i>
             <span>Echart</span>
-          </div>
-          <div class="e-chart">
+          </li>
+          <li class="e-chart">
             <i class="fa-solid fa-chart-bar"></i>
             <span>HightCharts</span>
-          </div>
-          <div class="e-chart">
+          </li>
+          <li
+            class="e-chart"
+            onmouseover="showSubChartHover()"
+            onmouseout="hideSubChartHover()"
+          >
             <i class="fa-solid fa-chart-area"></i>
             <span>ReCharts</span>
-          </div>
+          </li>
+        </div>
+        <div
+          id="hoverSubCharts"
+          onmouseover="showSubChartHover()"
+          onmouseout="hideSubChartHover()"
+        >
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart1</span></a
+            >
+          </li>
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart2</span></a
+            >
+          </li>
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart3</span></a
+            >
+          </li>
+        </div>
+        <div id="dark-mode">
+          <div id="switch-text">Dark Mode</div>
+          <label class="switch-toggle">
+            <input type="checkbox" id="switch" onchange="darkMode()"/>
+            <span class="slider"></span>
+          </label>
         </div>
       </div>
+
       <div class="right-side">
         <div class="top-right">
           <div class="bar_icon" onclick="openSideBar()">

@@ -9,12 +9,11 @@ body {
 }
 #left-side {
   flex-grow: 1;
-  background-color: #fdfdfd;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
 }
-.logo-container {
+#logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,29 +42,29 @@ body {
 .bar-item {
   display: flex;
   color: #000;
-  padding: 16px;
+  padding: 16px 0 16px 16px;
   text-decoration: none;
 }
-.bar-item:first-child{
+.bar-item:first-child {
   color: #1890ff;
-  background-color: #E6F7FF;
+  background-color: #e6f7ff;
 }
-.bar-item:first-child i{
+.bar-item:first-child i {
   color: #1890ff;
 }
 .bar-item i {
   color: gray;
 }
-.bar-item:hover i{
+.bar-item:hover i {
   color: #1890ff;
 }
 
-.item-content{
+.item-content {
   margin: 0;
   padding-left: 10px;
 }
 
-.bar-item:hover .item-content{
+.bar-item:hover .item-content {
   visibility: visible;
   color: #1890ff;
 }
@@ -75,64 +74,81 @@ body {
 .bar-item span {
   padding-left: 10px;
 }
-.style-icon:hover{
+.style-icon:hover {
   color: #1890ff;
 }
 #menu {
   visibility: hidden;
-  margin-left: 35px;
 }
 .chart {
+  display: flex;
+  flex-direction: row;
   padding: 10px;
+  padding-left: 45px;
   list-style: none;
 }
-.chart:hover i{
+.chart:hover i {
   color: #1890ff;
 }
-.chart a{
+.chart a {
   text-decoration: none;
 }
-.chart:hover a{
+.chart:hover span {
   color: #1890ff;
 }
 .chart i {
   color: gray;
 }
-.chart span{
+.chart span {
   padding-left: 10px;
+  color: #000;
 }
 
 #subCharts {
   visibility: hidden;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   list-style: none;
   text-align: center;
+  line-height: 2;
 }
-.subChart:hover i{
+.subChart:hover i {
   color: #1890ff;
 }
-.subChart a{
+.subChart:hover span {
+  color: #1890ff;
+}
+.subChart a {
   padding: 5px;
   text-decoration: none;
 }
-.subChart:hover a{
+.subChart:hover a {
   color: #1890ff;
 }
 .subChart i {
   color: gray;
 }
-.subChart span{
+.subChart span {
   padding-left: 10px;
+  color: #000;
+}
+#angle-up-sub {
+  display: none;
+  padding-left: 10px;
+  transform: translate(60px, 3px);
+}
+#angle-down-sub {
+  padding-left: 10px;
+  transform: translate(60px, 3px);
 }
 
 #angle-up {
   display: none;
   padding-left: 10px;
-  transform: translate(100px, 3px);
+  transform: translate(110px, 3px);
 }
 #angle-down {
   padding-left: 10px;
-  transform: translate(100px, 3px);
+  transform: translate(110px, 3px);
 }
 .right-side {
   flex-grow: 18;
@@ -182,7 +198,7 @@ body {
   height: 100%;
 }
 .content {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .footer {
   position: fixed;
@@ -207,11 +223,112 @@ body {
   padding: 10px;
 }
 .e-chart {
+  list-style: none;
   margin: 10px;
 }
-.e-chart:hover{
+.e-chart:hover i{
+  color: #1890ff;
+}
+.e-chart:hover span{
   color: #1890ff;
 }
 .e-chart span {
   margin-left: 5px;
+  color: #000;
+}
+.e-chart i{
+  color: gray;
+}
+
+#hoverSubCharts {
+  display: none;
+  position: absolute;
+  left: 305px;
+  top: 300px;
+  background-color: #ffffff;
+  width: 125px;
+  padding: 10px;
+}
+.hoverSubChart {
+  list-style: none;
+  margin: 10px;
+}
+.hoverSubChart a {
+  text-decoration: none;
+}
+.hoverSubChart:hover span {
+  color: #1890ff;
+}
+.hoverSubChart:hover i {
+  color: #1890ff;
+}
+.hoverSubChart i {
+  color: gray;
+}
+.hoverSubChart span {
+  margin-left: 5px;
+  color: #000;
+}
+#dark-mode {
+  display: flex;
+  position: relative;
+  bottom: 160px;
+}
+#switch-text {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 50px;
+  align-items: center;
+}
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch-toggle input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
