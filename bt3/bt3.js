@@ -1,11 +1,25 @@
 function resetBarItem() {
   let bar_items = document.getElementsByClassName("bar-item");
-  let i = document.getElementsByClassName("style-icon");
-  for (let index = 0; index < bar_items.length; index++) {
-    bar_items[index].style.backgroundColor = "#ffffff";
-    bar_items[index].style.borderRight = "none";
-    bar_items[index].style.color = "#000";
-    i[index].style.color = "grey";
+  for (let i = 0; i < bar_items.length; i++) {
+    if (bar_items[i].classList.contains("bar-item-active")) {
+      bar_items[i].classList.remove("bar-item-active");
+    }
+  }
+}
+function resetChart() {
+  let charts = document.getElementsByClassName("chart");
+  for (let i = 0; i < charts.length; i++) {
+    if (charts[i].classList.contains("chart-active")) {
+      charts[i].classList.remove("chart-active");
+    }
+  }
+}
+function resetSubChart() {
+  let subCharts = document.getElementsByClassName("subChart");
+  for (let i = 0; i < subCharts.length; i++) {
+    if (subCharts[i].classList.contains("subChart-active")) {
+      subCharts[i].classList.remove("subChart-active");
+    }
   }
 }
 function select_bar_item(index) {
@@ -13,58 +27,32 @@ function select_bar_item(index) {
   resetChart();
   resetSubChart();
   let bar_items = document.getElementsByClassName("bar-item");
-  let i = document.getElementsByClassName("style-icon");
-  bar_items[index].style.backgroundColor = "#E6F7FF";
-  bar_items[index].style.borderRight = "solid #0000FF";
-  bar_items[index].style.color = "#1890ff";
-  i[index].style.color = "#1890ff";
-}
-function resetChart() {
-  let charts = document.getElementsByClassName("chart");
-  let i = document.getElementsByClassName("style-chart");
-  let chart_content = document.getElementsByClassName("chart-content");
-  for (let index = 0; index < charts.length; index++) {
-    charts[index].style.backgroundColor = "#ffffff";
-    chart_content[index].style.color = "#000";
-    i[index].style.color = "grey";
-    charts[index].style.borderRight = "none";
+
+  if (bar_items[index].className == "bar-item") {
+    bar_items[index].classList.add("bar-item-active");
   }
 }
+
 function select_chart(index) {
-  resetChart();
   resetBarItem();
+  resetChart();
   resetSubChart();
-  let chart_contents = document.getElementsByClassName("chart-content");
   let charts = document.getElementsByClassName("chart");
-  let i = document.getElementsByClassName("style-chart");
-  charts[index].style.borderRight = "solid #0000FF";
-  charts[index].style.backgroundColor = "#E6F7FF";
-  chart_contents[index].style.color = "#1890ff";
-  i[index].style.color = "#1890ff";
-}
-function resetSubChart() {
-  let subChart_contents = document.getElementsByClassName("subChart-content");
-  let subCharts = document.getElementsByClassName("subChart");
-  let i = document.getElementsByClassName("subChart-style");
-  for (let index = 0; index < subCharts.length; index++) {
-    subCharts[index].style.backgroundColor = "#ffffff";
-    subChart_contents[index].style.color = "#000";
-    i[index].style.color = "grey";
-    subCharts[index].style.borderRight = "none";
+  if (charts[index].className == "chart") {
+    charts[index].classList.add("chart-active");
   }
 }
+
 function select_subChart(index) {
-  resetSubChart();
-  resetChart();
-  resetBarItem();
-  let subChart_contents = document.getElementsByClassName("subChart-content");
   let subCharts = document.getElementsByClassName("subChart");
-  let i = document.getElementsByClassName("subChart-style");
-  subCharts[index].style.borderRight = "solid #0000FF";
-  subCharts[index].style.backgroundColor = "#E6F7FF";
-  subChart_contents[index].style.color = "#1890ff";
-  i[index].style.color = "#1890ff";
+  resetBarItem();
+  resetChart();
+  resetSubChart();
+  if (subCharts[index].className == "subChart") {
+    subCharts[index].classList.add("subChart-active");
+  }
 }
+
 var countSideBar = 0;
 function openSideBar() {
   countSideBar += 1;
@@ -106,38 +94,38 @@ function openSideBar() {
 }
 var countChart = 0;
 function showHideChart() {
-  var a = document.getElementById("sidebar").offsetWidth;
+  let a = document.getElementById("sidebar").offsetWidth;
+  let charts = document.getElementById("menu");
+  let angle_down = document.getElementById("angle-down");
+  let angle_up = document.getElementById("angle-up");
+  let bar_items = document.getElementsByClassName("bar-item");
+  let i = document.getElementsByClassName("style-icon");
+  let subCharts = document.getElementById("subCharts");
   if (a >= 192) {
-    resetBarItem();
-    let charts = document.getElementById("menu");
-    let angle_down = document.getElementById("angle-down");
-    let angle_up = document.getElementById("angle-up");
-    let bar_items = document.getElementsByClassName("bar-item");
-    let i = document.getElementsByClassName("style-icon");
-    let subCharts = document.getElementById("subCharts");
-    bar_items[3].style.color = "#1890ff";
-    i[3].style.color = "#1890ff";
     countChart += 1;
     if (countChart % 2 !== 0) {
       charts.style.visibility = "visible";
       angle_up.style.display = "flex";
+      angle_up.style.color = "#1890ff";
       angle_down.style.display = "none";
-
-      return true;
+      bar_items[3].style.color = "#1890ff";
+      i[3].style.color = "#1890ff";
     } else {
       subCharts.style.visibility = "hidden";
       charts.style.visibility = "hidden";
       angle_down.style.display = "flex";
       angle_up.style.display = "none";
-      return false;
+      bar_items[3].style.color = "#000";
+      i[3].style.color = "grey";
     }
   }
 }
 
 function showChartHover() {
-  var a = document.getElementById("sidebar").offsetWidth;
+  let a = document.getElementById("sidebar").offsetWidth;
+  let hoverChart = document.getElementById("hoverChart");
   if (a < 192) {
-    document.getElementById("hoverChart").style.display = "inline-block";
+    hoverChart.style.display = "inline-block";
   }
 }
 
@@ -150,20 +138,23 @@ function hideChartHover() {
 
 var countSubChart = 0;
 function showHideSubChart() {
-  resetChart();
   countSubChart += 1;
   let subCharts = document.getElementById("subCharts");
   let angle_down = document.getElementById("angle-down-sub");
   let angle_up = document.getElementById("angle-up-sub");
   let i = document.getElementsByClassName("style-chart");
   let chart_content = document.getElementsByClassName("chart-content");
-  chart_content[2].style.color = "#1890ff";
-  i[2].style.color = "#1890ff";
+
   if (countSubChart % 2 !== 0) {
+    chart_content[2].style.color = "#1890ff";
+    i[2].style.color = "#1890ff";
     subCharts.style.visibility = "visible";
     angle_up.style.display = "flex";
+    angle_up.style.color = "#1890ff";
     angle_down.style.display = "none";
   } else {
+    chart_content[2].style.color = "#000";
+    i[2].style.color = "grey";
     angle_up.style.display = "none";
     angle_down.style.display = "flex";
     subCharts.style.visibility = "hidden";
@@ -180,28 +171,43 @@ function hideSubChartHover() {
 
 // Dark Mode
 function darkMode() {
-  let bar_item = document.getElementsByClassName("bar-item");
-  let sidebar = document.getElementById("sidebar");
-  let i = document.getElementsByClassName("style-icon");
-  let switch_text = document.getElementById("switch-text");
-  bar_item[0].style.backgroundColor = "#1890ff";
+  const sidebar = document.getElementById("sidebar");
+  let hoverChart = document.getElementById("hoverChart");
+  let hoverSubChart = document.getElementById("hoverSubCharts");
+  let hi = document.getElementById("hiAccount");
+  let bar_icon = document.getElementById("bar-icon");
+  if (sidebar.className == "light") {
+    sidebar.className = "dark";
+    document.getElementById("switch-text").style.color = "#fff";
+  } else {
+    sidebar.className = "light";
+    document.getElementById("switch-text").style.color = "#000";
+  }
+  if (hoverChart.className == "lightChart") {
+    hoverChart.className = "darkChart";
+  } else {
+    hoverChart.className = "lightChart";
+  }
+  if (hoverSubChart.className == "lightSubChart") {
+    hoverSubChart.className = "darkSubChart";
+  } else {
+    hoverSubChart.className = "lightSubChart";
+  }
+  if (hi.className == "hi") {
+    hi.className = "darkHi";
+  } else {
+    hi.className = "hi";
+  }
+  if (bar_icon.className == "bar_icon") {
+    bar_icon.className = "bar_icon_dark";
+  } else {
+    bar_icon.className = "bar_icon_dark";
+  }
   if (document.getElementById("switch").checked) {
     document.getElementById("logo-container").style.backgroundColor = "#001529";
-    sidebar.style.backgroundColor = "#001529";
-    switch_text.style.color = "#ffffff";
-    for (let index = 0; index < bar_item.length; index++) {
-      bar_item[index].style.color = "#ffffff";
-      i[index].style.color = "#ffffff";
-    }
+    document.getElementById("top-right").style.backgroundColor = "#001529";
   } else {
     document.getElementById("logo-container").style.backgroundColor = "#fefefe";
-    sidebar.style.backgroundColor = "#fefefe";
-    bar_item[0].style.backgroundColor = "#E6F7FF";
-    bar_item[0].style.color = "#ffffff";
-    i[0].style.color = "gray";
-    switch_text.style.color = "#000";
-    for (let index = 0; index < bar_item.length; index++) {
-      bar_item[index].style.color = "#000000";
-    }
+    document.getElementById("top-right").style.backgroundColor = "#fff";
   }
 }
