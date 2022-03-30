@@ -201,7 +201,7 @@ function darkMode() {
   if (bar_icon.className == "bar_icon") {
     bar_icon.className = "bar_icon_dark";
   } else {
-    bar_icon.className = "bar_icon_dark";
+    bar_icon.className = "bar_icon";
   }
   if (document.getElementById("switch").checked) {
     document.getElementById("logo-container").style.backgroundColor = "#001529";
