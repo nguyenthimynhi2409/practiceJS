@@ -94,6 +94,9 @@ function openSideBar() {
 }
 var countChart = 0;
 function showHideChart() {
+  resetBarItem();
+  resetChart();
+  resetSubChart();
   let a = document.getElementById("sidebar").offsetWidth;
   let charts = document.getElementById("menu");
   let angle_down = document.getElementById("angle-down");
@@ -108,15 +111,15 @@ function showHideChart() {
       angle_up.style.display = "flex";
       angle_up.style.color = "#1890ff";
       angle_down.style.display = "none";
-      bar_items[3].style.color = "#1890ff";
-      i[3].style.color = "#1890ff";
+      // bar_items[3].style.color = "#1890ff";
+      // i[3].style.color = "#1890ff";
     } else {
       subCharts.style.visibility = "hidden";
       charts.style.visibility = "hidden";
       angle_down.style.display = "flex";
       angle_up.style.display = "none";
-      bar_items[3].style.color = "#000";
-      i[3].style.color = "grey";
+      // bar_items[3].style.color = "#000";
+      // i[3].style.color = "grey";
     }
   }
 }
@@ -146,15 +149,11 @@ function showHideSubChart() {
   let chart_content = document.getElementsByClassName("chart-content");
 
   if (countSubChart % 2 !== 0) {
-    chart_content[2].style.color = "#1890ff";
-    i[2].style.color = "#1890ff";
     subCharts.style.visibility = "visible";
     angle_up.style.display = "flex";
     angle_up.style.color = "#1890ff";
     angle_down.style.display = "none";
   } else {
-    chart_content[2].style.color = "#000";
-    i[2].style.color = "grey";
     angle_up.style.display = "none";
     angle_down.style.display = "flex";
     subCharts.style.visibility = "hidden";
@@ -176,12 +175,24 @@ function darkMode() {
   let hoverSubChart = document.getElementById("hoverSubCharts");
   let hi = document.getElementById("hiAccount");
   let bar_icon = document.getElementById("bar-icon");
+  let dark_mode = document.getElementById("dark-mode");
+  let left_side = document.getElementById("left-side");
+  if (left_side.className == "light") {
+    left_side.className = "dark";
+  } else {
+    left_side.className = "light";
+  }
   if (sidebar.className == "light") {
     sidebar.className = "dark";
     document.getElementById("switch-text").style.color = "#fff";
   } else {
     sidebar.className = "light";
     document.getElementById("switch-text").style.color = "#000";
+  }
+  if (dark_mode.className == "light") {
+    dark_mode.className = "dark";
+  } else {
+    dark_mode.className = "light";
   }
   if (hoverChart.className == "lightChart") {
     hoverChart.className = "darkChart";
