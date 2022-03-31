@@ -1,6 +1,6 @@
 function doA(ms) {
   let startDate = new Date().getTime();
-  while (new Date().getTime() < startDate + ms) {}
+  while (new Date().getTime() < startDate + ms);
 }
 function doB(ms) {
   return new Promise((resolve) => setTimeout(() => resolve()), ms);
