@@ -300,6 +300,7 @@ background-color: #001529;
   padding: 10px;
   padding-left: 45px;
   list-style: none;
+  background-color: #000C17;
 }
 .dark .chart-active {
   background-color: #1890ff;
@@ -334,6 +335,7 @@ background-color: #001529;
 }
 .dark .subChart {
   padding: 5px;
+  background-color: #01080f;
 }
 .dark .subChart-active {
   background-color: #1890ff;

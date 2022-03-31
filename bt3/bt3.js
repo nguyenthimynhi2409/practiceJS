@@ -101,8 +101,6 @@ function showHideChart() {
   let charts = document.getElementById("menu");
   let angle_down = document.getElementById("angle-down");
   let angle_up = document.getElementById("angle-up");
-  let bar_items = document.getElementsByClassName("bar-item");
-  let i = document.getElementsByClassName("style-icon");
   let subCharts = document.getElementById("subCharts");
   if (a >= 192) {
     countChart += 1;
@@ -111,15 +109,11 @@ function showHideChart() {
       angle_up.style.display = "flex";
       angle_up.style.color = "#1890ff";
       angle_down.style.display = "none";
-      // bar_items[3].style.color = "#1890ff";
-      // i[3].style.color = "#1890ff";
     } else {
       subCharts.style.visibility = "hidden";
       charts.style.visibility = "hidden";
       angle_down.style.display = "flex";
       angle_up.style.display = "none";
-      // bar_items[3].style.color = "#000";
-      // i[3].style.color = "grey";
     }
   }
 }
@@ -145,8 +139,6 @@ function showHideSubChart() {
   let subCharts = document.getElementById("subCharts");
   let angle_down = document.getElementById("angle-down-sub");
   let angle_up = document.getElementById("angle-up-sub");
-  let i = document.getElementsByClassName("style-chart");
-  let chart_content = document.getElementsByClassName("chart-content");
 
   if (countSubChart % 2 !== 0) {
     subCharts.style.visibility = "visible";
@@ -175,7 +167,6 @@ function darkMode() {
   let hoverSubChart = document.getElementById("hoverSubCharts");
   let hi = document.getElementById("hiAccount");
   let bar_icon = document.getElementById("bar-icon");
-  let dark_mode = document.getElementById("dark-mode");
   let left_side = document.getElementById("left-side");
   if (left_side.className == "light") {
     left_side.className = "dark";
@@ -188,11 +179,6 @@ function darkMode() {
   } else {
     sidebar.className = "light";
     document.getElementById("switch-text").style.color = "#000";
-  }
-  if (dark_mode.className == "light") {
-    dark_mode.className = "dark";
-  } else {
-    dark_mode.className = "light";
   }
   if (hoverChart.className == "lightChart") {
     hoverChart.className = "darkChart";
