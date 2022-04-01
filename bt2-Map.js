@@ -23,9 +23,9 @@ const getContent = async () => {
         const content2 = fs.readFileSync(getPath(i, "file2"), "utf-8");
         resolve(Number(content1) + Number(content2));
         sum += Number(content1) + Number(content2);
-        //console.log(sum);
-        // const delay = Date.now() - timeoutScheduled;
-        // console.log(delay);
+        console.log(sum);
+        const delay = Date.now() - timeoutScheduled;
+        console.log(delay);
       });
     });
   });

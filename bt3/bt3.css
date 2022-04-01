@@ -193,9 +193,9 @@ background-color: #001529;
 }
 #hoverChart {
   display: none;
-  position: relative;
-  left: 160px;
-  bottom: 570px;
+  position: absolute;
+  left: 10%;
+  bottom: 54.6%;
   width: 125px;
   padding: 10px;
 }
@@ -222,8 +222,8 @@ background-color: #001529;
 #hoverSubCharts {
   display: none;
   position: absolute;
-  left: 305px;
-  top: 300px;
+  left: 19.4%;
+  bottom:45%;
   width: 125px;
   padding: 10px;
 }
