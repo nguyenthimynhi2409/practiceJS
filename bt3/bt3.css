@@ -8,6 +8,7 @@ body {
   height: 100vh;
 }
 #left-side {
+  position: relative;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
@@ -194,7 +195,7 @@ background-color: #001529;
 #hoverChart {
   display: none;
   position: absolute;
-  left: 10%;
+  left: 160px;
   bottom: 54.6%;
   width: 125px;
   padding: 10px;
@@ -222,7 +223,7 @@ background-color: #001529;
 #hoverSubCharts {
   display: none;
   position: absolute;
-  left: 19.4%;
+  left: 300px;
   bottom:45%;
   width: 125px;
   padding: 10px;
