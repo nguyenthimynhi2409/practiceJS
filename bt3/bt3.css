@@ -10,15 +10,16 @@ body {
 #left-side {
   position: relative;
   flex-grow: 1;
+  width: 200px;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
 }
 .light #left-side {
- background-color: #fefefe;
+  background-color: #fefefe;
 }
 .dark #left-side {
-background-color: #001529;
+  background-color: #001529;
 }
 #logo-container {
   display: flex;
@@ -56,7 +57,6 @@ background-color: #001529;
 }
 .light .bar-item-active {
   display: flex;
-  padding: 16px 0 16px 16px;
   text-decoration: none;
   color: #1890ff;
   background-color: #e6f7ff;
@@ -65,7 +65,7 @@ background-color: #001529;
 .light .bar-item-active .style-icon {
   color: #1890ff;
 }
-.light .bar-item i {
+.light .bar-item .style-icon {
   color: gray;
 }
 .light .bar-item:hover i {
@@ -94,8 +94,7 @@ background-color: #001529;
 .light .chart {
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  padding-left: 45px;
+  padding: 10px 10px 10px 45px;
   list-style: none;
 }
 .light .chart:hover i {
@@ -177,35 +176,35 @@ background-color: #001529;
 .light #angle-up-sub {
   display: none;
   padding-left: 10px;
-  transform: translate(60px, 3px);
+  transform: translate(85px, 3px);
 }
 .light #angle-down-sub {
   padding-left: 10px;
-  transform: translate(60px, 3px);
+  transform: translate(85px, 3px);
 }
 .light #angle-up {
   display: none;
   padding-left: 10px;
-  transform: translate(110px, 3px);
+  transform: translate(135px, 3px);
 }
 .light #angle-down {
   padding-left: 10px;
-  transform: translate(110px, 3px);
+  transform: translate(135px, 3px);
 }
 #hoverChart {
   display: none;
   position: absolute;
-  left: 160px;
+  left: 90px;
   bottom: 54.6%;
-  width: 125px;
-  padding: 10px;
+  width: 130px;
+  padding: 10px 0 10px 10px;
 }
 .lightChart {
   background-color: #ffffff;
 }
 .lightChart .e-chart {
   list-style: none;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
 .lightChart .e-chart:hover i {
   color: #1890ff;
@@ -223,17 +222,17 @@ background-color: #001529;
 #hoverSubCharts {
   display: none;
   position: absolute;
-  left: 300px;
-  bottom:45%;
-  width: 125px;
-  padding: 10px;
+  left: 230px;
+  bottom: 45%;
+  width: 120px;
+  padding: 10px 0 10px 10px;
 }
 .lightSubChart {
   background-color: #fff;
 }
 .lightSubChart .hoverSubChart {
   list-style: none;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
 .lightSubChart .hoverSubChart a {
   text-decoration: none;
@@ -298,10 +297,9 @@ background-color: #001529;
 .dark .chart {
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  padding-left: 45px;
+  padding: 10px 10px 10px 45px;
   list-style: none;
-  background-color: #000C17;
+  background-color: #000c17;
 }
 .dark .chart-active {
   background-color: #1890ff;
@@ -370,20 +368,20 @@ background-color: #001529;
 .dark #angle-up-sub {
   display: none;
   padding-left: 10px;
-  transform: translate(60px, 3px);
+  transform: translate(85px, 3px);
 }
 .dark #angle-down-sub {
   padding-left: 10px;
-  transform: translate(60px, 3px);
+  transform: translate(85px, 3px);
 }
 .dark #angle-up {
   display: none;
   padding-left: 10px;
-  transform: translate(110px, 3px);
+  transform: translate(135px, 3px);
 }
 .dark #angle-down {
   padding-left: 10px;
-  transform: translate(110px, 3px);
+  transform: translate(135px, 3px);
 }
 
 .darkChart {
@@ -391,7 +389,7 @@ background-color: #001529;
 }
 .darkChart .e-chart {
   list-style: none;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
 .darkChart .e-chart:hover i {
   color: #1890ff;
@@ -412,7 +410,7 @@ background-color: #001529;
 }
 .darkSubChart .hoverSubChart {
   list-style: none;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
 }
 .darkSubChart .hoverSubChart a {
   text-decoration: none;
@@ -521,10 +519,10 @@ background-color: #001529;
   position: relative;
 }
 .light #dark-mode {
-background-color: #fefefe;
+  background-color: #fefefe;
 }
 .dark #dark-mode {
-background-color: #001529;
+  background-color: #001529;
 }
 
 #switch-text {

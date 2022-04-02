@@ -66,20 +66,22 @@ function openSideBar() {
   let subCharts = document.getElementById("subCharts");
   let darkMode = document.getElementById("dark-mode");
   if (countSideBar % 2 !== 0) {
-    left_side.style.flexGrow = "0.1";
+    left_side.style.width = "20px";
     logo_content.style.display = "none";
     for (let i = 0; i < item_contents.length; i++) {
       item_contents[i].style.display = "none";
     }
     for (let i = 0; i < bar_items.length; i++) {
       bar_items[i].style.justifyContent = "center";
+      bar_items[i].style.paddingLeft = "0px";
     }
     angle_down.style.display = "none";
     angle_up.style.display = "none";
-    subCharts.style.visibility = "hidden";
     charts.style.visibility = "hidden";
+    subCharts.style.visibility = "hidden";
     darkMode.style.display = "none";
   } else {
+    left_side.style.width = "200px";
     left_side.style.flexGrow = "1";
     logo_content.style.display = "flex";
     for (let i = 0; i < item_contents.length; i++) {
@@ -87,6 +89,13 @@ function openSideBar() {
     }
     for (let i = 0; i < bar_items.length; i++) {
       bar_items[i].style.justifyContent = "left";
+      bar_items[i].style.paddingLeft = "16px";
+    }
+    if (countChart % 2 !== 0) {
+      charts.style.visibility = "visible";
+      if (countSubChart % 2 !== 0) {
+        subCharts.style.visibility = "visible";
+      }
     }
     angle_down.style.display = "flex";
     darkMode.style.display = "flex";
@@ -94,9 +103,6 @@ function openSideBar() {
 }
 var countChart = 0;
 function showHideChart() {
-  resetBarItem();
-  resetChart();
-  resetSubChart();
   let a = document.getElementById("sidebar").offsetWidth;
   let charts = document.getElementById("menu");
   let angle_down = document.getElementById("angle-down");
@@ -109,6 +115,9 @@ function showHideChart() {
       angle_up.style.display = "flex";
       angle_up.style.color = "#1890ff";
       angle_down.style.display = "none";
+      if(countSubChart %2 !== 0){
+        subCharts.style.visibility = "visible";
+      }
     } else {
       subCharts.style.visibility = "hidden";
       charts.style.visibility = "hidden";
@@ -128,7 +137,7 @@ function showChartHover() {
 
 function hideChartHover() {
   var a = document.getElementById("sidebar").offsetWidth;
-  if (a <= 192) {
+  if (a < 192) {
     document.getElementById("hoverChart").style.display = "none";
   }
 }
