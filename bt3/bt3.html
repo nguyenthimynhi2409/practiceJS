@@ -54,6 +54,29 @@
               <i id="angle-down" class="fa-solid fa-angle-down"></i>
               <i id="angle-up" class="fa-solid fa-angle-up"></i>
             </div>
+            <div
+              id="hoverChart"
+              class="lightChart"
+              onmouseover="showChartHover()"
+              onmouseout="hideChartHover()"
+            >
+              <li class="e-chart">
+                <i class="chart-style fa-solid fa-chart-column"></i>
+                <span class="e-chart-style">Echart</span>
+              </li>
+              <li class="e-chart">
+                <i class="chart-style fa-solid fa-chart-bar"></i>
+                <span class="e-chart-style">HightCharts</span>
+              </li>
+              <li
+                class="e-chart"
+                onmouseover="showSubChartHover()"
+                onmouseout="hideSubChartHover()"
+              >
+                <i class="chart-style fa-solid fa-chart-area"></i>
+                <span class="e-chart-style">ReCharts</span>
+              </li>
+            </div>
           </a>
           <div id="menu">
             <li class="chart" onclick="select_chart(0)">
@@ -99,29 +122,6 @@
               </li>
             </div>
           </div>
-        </div>
-        <div
-          id="hoverChart"
-          class="lightChart"
-          onmouseover="showChartHover()"
-          onmouseout="hideChartHover()"
-        >
-          <li class="e-chart">
-            <i class="fa-solid fa-chart-column"></i>
-            <span class="e-chart-style">Echart</span>
-          </li>
-          <li class="e-chart">
-            <i class="fa-solid fa-chart-bar"></i>
-            <span class="e-chart-style">HightCharts</span>
-          </li>
-          <li
-            class="e-chart"
-            onmouseover="showSubChartHover()"
-            onmouseout="hideSubChartHover()"
-          >
-            <i class="fa-solid fa-chart-area"></i>
-            <span class="e-chart-style">ReCharts</span>
-          </li>
         </div>
         <div
           id="hoverSubCharts"

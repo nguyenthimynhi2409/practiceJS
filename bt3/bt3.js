@@ -130,8 +130,10 @@ function showHideChart() {
 function showChartHover() {
   let a = document.getElementById("sidebar").offsetWidth;
   let hoverChart = document.getElementById("hoverChart");
+  let chart_style = document.getElementsByClassName("chart-style");
   if (a < 192) {
-    hoverChart.style.display = "inline-block";
+    event.stopPropagation();
+    hoverChart.style.display = "flex";
   }
 }
 
