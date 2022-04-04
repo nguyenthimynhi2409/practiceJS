@@ -39,17 +39,16 @@
             ><i class="style-icon fa-solid fa-cart-shopping"></i>
             <p class="item-content">Posts</p>
           </a>
-          <a
-            href="#"
+          <div
             class="bar-item"
             id="chart"
             onmouseover="showChartHover()"
             onmouseout="hideChartHover()"
             onclick="showHideChart()"
           >
+            <a href="#"></a>
             <i class="style-icon fa-solid fa-chart-line"></i>
             <p class="item-content">Charts</p>
-
             <div>
               <i id="angle-down" class="fa-solid fa-angle-down"></i>
               <i id="angle-up" class="fa-solid fa-angle-up"></i>
@@ -78,28 +77,32 @@
               </li>
             </div>
             <div
-          id="hoverSubCharts"
-          class="lightSubChart"
-          onmouseover="showSubChartHover();showChartHover()"
-          onmouseout="hideSubChartHover();hideChartHover()"
-        >
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart1</span></a
+              id="hoverSubCharts"
+              class="lightSubChart"
+              onmouseover="showSubChartHover();showChartHover()"
+              onmouseout="hideSubChartHover();hideChartHover()"
             >
-          </li>
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart2</span></a
-            >
-          </li>
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart3</span></a
-            >
-          </li>
-        </div>
-          </a>
+              <li class="hoverSubChart">
+                <a href="#"
+                  ><i class="fa-solid fa-chart-column"></i
+                  ><span>Chart1</span></a
+                >
+              </li>
+              <li class="hoverSubChart">
+                <a href="#"
+                  ><i class="fa-solid fa-chart-column"></i
+                  ><span>Chart2</span></a
+                >
+              </li>
+              <li class="hoverSubChart">
+                <a href="#"
+                  ><i class="fa-solid fa-chart-column"></i
+                  ><span>Chart3</span></a
+                >
+              </li>
+            </div>
+          </div>
+
           <div id="menu">
             <li class="chart" onclick="select_chart(0)">
               <a href="#"
@@ -145,7 +148,7 @@
             </div>
           </div>
         </div>
-        
+
         <div id="dark-mode" class="light">
           <div id="switch-text">Dark Mode</div>
           <label class="switch-toggle">

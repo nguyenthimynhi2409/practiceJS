@@ -91,6 +91,9 @@ body {
 .light #menu {
   visibility: hidden;
 }
+#chart a{
+ padding: 0;
+}
 .light .chart {
   display: flex;
   flex-direction: row;
@@ -224,7 +227,7 @@ body {
   display: none;
   position: absolute;
   flex-direction: column;
-  transform: translateX(140px);
+  transform: translate(140px,60px);
   left: 100%;
   width: 120px;
   padding: 10px 0 10px 10px;

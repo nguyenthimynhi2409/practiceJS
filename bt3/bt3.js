@@ -115,7 +115,7 @@ function showHideChart() {
       angle_up.style.display = "flex";
       angle_up.style.color = "#1890ff";
       angle_down.style.display = "none";
-      if(countSubChart %2 !== 0){
+      if (countSubChart % 2 !== 0) {
         subCharts.style.visibility = "visible";
       }
     } else {
