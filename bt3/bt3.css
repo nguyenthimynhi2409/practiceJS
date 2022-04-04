@@ -192,7 +192,7 @@ body {
   transform: translate(135px, 3px);
 }
 #hoverChart {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   transform: translate(0px, -20px);
@@ -221,7 +221,7 @@ body {
   color: gray;
 }
 #hoverSubCharts {
-  display: flex;
+  display: none;
   position: absolute;
   flex-direction: column;
   transform: translateX(140px);
