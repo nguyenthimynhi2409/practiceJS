@@ -130,9 +130,7 @@ function showHideChart() {
 function showChartHover() {
   let a = document.getElementById("sidebar").offsetWidth;
   let hoverChart = document.getElementById("hoverChart");
-  let chart_style = document.getElementsByClassName("chart-style");
   if (a < 192) {
-    event.stopPropagation();
     hoverChart.style.display = "flex";
   }
 }
@@ -164,7 +162,7 @@ function showHideSubChart() {
 }
 
 function showSubChartHover() {
-  document.getElementById("hoverSubCharts").style.display = "inline-block";
+  document.getElementById("hoverSubCharts").style.display = "flex";
 }
 
 function hideSubChartHover() {

@@ -77,6 +77,28 @@
                 <span class="e-chart-style">ReCharts</span>
               </li>
             </div>
+            <div
+          id="hoverSubCharts"
+          class="lightSubChart"
+          onmouseover="showSubChartHover();showChartHover()"
+          onmouseout="hideSubChartHover();hideChartHover()"
+        >
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart1</span></a
+            >
+          </li>
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart2</span></a
+            >
+          </li>
+          <li class="hoverSubChart">
+            <a href="#"
+              ><i class="fa-solid fa-chart-column"></i><span>Chart3</span></a
+            >
+          </li>
+        </div>
           </a>
           <div id="menu">
             <li class="chart" onclick="select_chart(0)">
@@ -123,28 +145,7 @@
             </div>
           </div>
         </div>
-        <div
-          id="hoverSubCharts"
-          class="lightSubChart"
-          onmouseover="showSubChartHover();showChartHover()"
-          onmouseout="hideSubChartHover();hideChartHover()"
-        >
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart1</span></a
-            >
-          </li>
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart2</span></a
-            >
-          </li>
-          <li class="hoverSubChart">
-            <a href="#"
-              ><i class="fa-solid fa-chart-column"></i><span>Chart3</span></a
-            >
-          </li>
-        </div>
+        
         <div id="dark-mode" class="light">
           <div id="switch-text">Dark Mode</div>
           <label class="switch-toggle">
